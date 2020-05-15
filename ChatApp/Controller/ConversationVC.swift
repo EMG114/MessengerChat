@@ -88,8 +88,8 @@ extension ConversationVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        cell.textLabel.text = "Test Cell"
+ let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) 
+        cell.textLabel?.text = "Test Cell"
         return cell
     }
     
