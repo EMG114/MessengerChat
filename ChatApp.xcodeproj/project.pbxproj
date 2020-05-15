@@ -17,6 +17,8 @@
 		073704A6246EFE1200013063 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704A5246EFE1200013063 /* LoginController.swift */; };
 		073704A8246EFE3100013063 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704A7246EFE3100013063 /* RegistrationController.swift */; };
 		073704AA246F04EB00013063 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704A9246F04EB00013063 /* Extensions.swift */; };
+		073704AC246F274600013063 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704AB246F274600013063 /* InputContainerView.swift */; };
+		073704AE246F30A400013063 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704AD246F30A400013063 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		073704A5246EFE1200013063 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		073704A7246EFE3100013063 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		073704A9246F04EB00013063 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		073704AB246F274600013063 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		073704AD246F30A400013063 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		0737049E246EE20900013063 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				073704AB246F274600013063 /* InputContainerView.swift */,
+				073704AD246F30A400013063 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,12 +213,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0737048B246EE1E100013063 /* ViewController.swift in Sources */,
+				073704AC246F274600013063 /* InputContainerView.swift in Sources */,
 				07370487246EE1E100013063 /* AppDelegate.swift in Sources */,
 				07370489246EE1E100013063 /* SceneDelegate.swift in Sources */,
 				073704A3246EE3B000013063 /* ConversationVC.swift in Sources */,
 				073704A8246EFE3100013063 /* RegistrationController.swift in Sources */,
 				073704A6246EFE1200013063 /* LoginController.swift in Sources */,
 				073704AA246F04EB00013063 /* Extensions.swift in Sources */,
+				073704AE246F30A400013063 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
