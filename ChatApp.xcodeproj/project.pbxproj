@@ -19,6 +19,8 @@
 		073704AA246F04EB00013063 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704A9246F04EB00013063 /* Extensions.swift */; };
 		073704AC246F274600013063 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704AB246F274600013063 /* InputContainerView.swift */; };
 		073704AE246F30A400013063 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704AD246F30A400013063 /* CustomTextField.swift */; };
+		073704B0246F407800013063 /* plus_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 073704AF246F407800013063 /* plus_photo@2x.png */; };
+		073704B2246F6A9300013063 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704B1246F6A9300013063 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		073704A9246F04EB00013063 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		073704AB246F274600013063 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		073704AD246F30A400013063 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		073704AF246F407800013063 /* plus_photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus_photo@2x.png"; sourceTree = "<group>"; };
+		073704B1246F6A9300013063 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 				0737048A246EE1E100013063 /* ViewController.swift */,
 				0737048C246EE1E100013063 /* Main.storyboard */,
 				0737048F246EE1E200013063 /* Assets.xcassets */,
+				073704AF246F407800013063 /* plus_photo@2x.png */,
 				07370491246EE1E200013063 /* LaunchScreen.storyboard */,
 				07370494246EE1E200013063 /* Info.plist */,
 			);
@@ -104,6 +109,7 @@
 		0737049D246EE20700013063 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				073704B1246F6A9300013063 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 				07370493246EE1E200013063 /* LaunchScreen.storyboard in Resources */,
 				07370490246EE1E200013063 /* Assets.xcassets in Resources */,
 				0737048E246EE1E100013063 /* Main.storyboard in Resources */,
+				073704B0246F407800013063 /* plus_photo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +227,7 @@
 				073704A8246EFE3100013063 /* RegistrationController.swift in Sources */,
 				073704A6246EFE1200013063 /* LoginController.swift in Sources */,
 				073704AA246F04EB00013063 /* Extensions.swift in Sources */,
+				073704B2246F6A9300013063 /* LoginViewModel.swift in Sources */,
 				073704AE246F30A400013063 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

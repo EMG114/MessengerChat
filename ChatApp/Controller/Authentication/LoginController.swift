@@ -12,6 +12,8 @@ class LoginController: UIViewController {
     
     // MARK: - Properties
     
+    private var viewModel = LoginViewModel()
+    
     private let iconImage: UIImageView = {
         
         let iconView = UIImageView()
@@ -21,11 +23,11 @@ class LoginController: UIViewController {
     }()
     
     private lazy var emailContainerView: InputContainerView = {
-  return InputContainerView(image: UIImage(systemName: "envelope"), textField: emailTextField)
+        return InputContainerView(image: UIImage(systemName: "envelope"), textField: emailTextField)
     }()
     
     private lazy var passwordContainerView: InputContainerView = {
-return InputContainerView(image: UIImage(systemName: "lock"), textField: passwordTextField)
+        return InputContainerView(image: UIImage(systemName: "lock"), textField: passwordTextField)
     }()
     
     private let loginButton: UIButton = {
@@ -36,6 +38,8 @@ return InputContainerView(image: UIImage(systemName: "lock"), textField: passwor
         button.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
         button.setTitleColor(.white, for: .normal)
         button.setHeight(height: 50)
+        button.isEnabled = false
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -67,12 +71,37 @@ return InputContainerView(image: UIImage(systemName: "lock"), textField: passwor
     
     // MARK: - Selectors
     
+    @objc func handleLogin() {
+        
+    }
+    
     @objc func handleShowSignUp() {
-       let controller = RegistrationController()
+        let controller = RegistrationController()
         navigationController?.pushViewController(controller, animated: true)
     }
     
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
+        
+        checkFormStatus()
+    }
+    
+    
     // MARK: - Helpers
+    
+    func checkFormStatus() {
+        if viewModel.formIsValid {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.1450980392, blue: 0.3215686275, alpha: 1)
+        } else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        }
+    }
     
     func configureUI() {
         navigationController?.navigationBar.isHidden = true
@@ -94,14 +123,10 @@ return InputContainerView(image: UIImage(systemName: "lock"), textField: passwor
         
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.anchor(left:view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 32, paddingBottom: 16,  paddingRight: 32)
+        
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
     
-    func configureGradientLayer() {
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemPink.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
-    }
     
 }
