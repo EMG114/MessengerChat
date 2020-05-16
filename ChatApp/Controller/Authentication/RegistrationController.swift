@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 protocol AuthenticationControllerProtocol {
     func checkFormStatus()
@@ -18,6 +19,7 @@ class RegistrationController: UIViewController {
     // MARK: - Properties
     
     private var viewModel = RegistrationViewModel()
+    private var profileImage: UIImage?
     
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -49,9 +51,9 @@ class RegistrationController: UIViewController {
     
     private let emailTextField = CustomTextField(placeholder: "Email")
     
-    private let fullNameTextField = CustomTextField(placeholder: "FullName")
+    private let fullNameTextField = CustomTextField(placeholder: "Fullname")
     
-    private let userNameTextField = CustomTextField(placeholder: "UserName")
+    private let userNameTextField = CustomTextField(placeholder: "Username")
     
     private let passwordTextField: CustomTextField = {
         let tf = CustomTextField(placeholder: "Password")
@@ -67,6 +69,8 @@ class RegistrationController: UIViewController {
         button.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
         button.setTitleColor(.white, for: .normal)
         button.setHeight(height: 50)
+        button.isEnabled = false
+        button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
         return button
     }()
     
@@ -91,6 +95,60 @@ class RegistrationController: UIViewController {
     
     
     // MARK: - Selectors
+    
+    @objc func handleRegistration() {
+        
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullname = fullNameTextField.text else { return }
+        guard let username = userNameTextField.text?.lowercased() else { return }
+        guard let profileImage = profileImage else { return }
+        
+        guard let imageData = profileImage.jpegData(compressionQuality: 0.3) else { return }
+        let filename = NSUUID().uuidString
+        let ref = Storage.storage().reference(withPath: "/profile_images/\(filename)")
+        
+        ref.putData(imageData, metadata: nil) { (meta, error) in
+            if let error = error {
+                print("\(error.localizedDescription)")
+                return
+            }
+            
+            ref.downloadURL { (url, error) in
+                guard let profileImageUrl = url?.absoluteString else { return }
+                
+                Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+                    if let error = error {
+                        print("\(error.localizedDescription)")
+                    }
+                    
+                    
+                    guard let uid = result?.user.uid else { return }
+                    
+                    let data = [ "email": email,
+                                 "fullname":fullname,
+                                 "username":username,
+                                 "profileImageUrl": profileImageUrl,
+                                 "uid":uid] as [String:Any]
+                    
+                    Firestore.firestore().collection("users").document(uid).setData(data) { error in
+                        if let error = error {
+                            print("\(error.localizedDescription)")
+                            return
+                        }
+                        print("Could not create user")
+                    }
+                    
+                }
+                
+                
+                
+            }
+            
+        }
+        
+        
+    }
     
     @objc func textDidChange(sender: UITextField) {
         if sender == emailTextField {
@@ -165,6 +223,7 @@ class RegistrationController: UIViewController {
 extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.originalImage] as? UIImage
+        profileImage = image
         plusPhotoButton.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
         plusPhotoButton.layer.borderColor = UIColor.white.cgColor
         plusPhotoButton.layer.borderWidth = 3.0

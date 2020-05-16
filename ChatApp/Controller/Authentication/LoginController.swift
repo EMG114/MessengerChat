@@ -72,7 +72,7 @@ class LoginController: UIViewController {
     // MARK: - Selectors
     
     @objc func handleLogin() {
-        
+        checkFormStatus()
     }
     
     @objc func handleShowSignUp() {
@@ -87,7 +87,7 @@ class LoginController: UIViewController {
             viewModel.password = sender.text
         }
         
-        checkFormStatus()
+          checkFormStatus()
     }
     
     

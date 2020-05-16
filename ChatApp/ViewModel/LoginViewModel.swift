@@ -16,7 +16,7 @@ struct LoginViewModel: AuthenticationProtocol {
     var userName: String?
     
     var formIsValid: Bool {
-        return email?.isEmpty == false && password?.isEmpty == false && fullName?.isEmpty == false && userName?.isEmpty == false
+        return email?.isEmpty == false && password?.isEmpty == false 
     }
     
 }
