@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 private let reuseIdentifier = "ConversationCell"
@@ -22,6 +23,27 @@ class ConversationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        authenticateUser()
+    }
+    
+    // MARK: - API
+    
+    func authenticateUser() {
+        
+        if Auth.auth().currentUser?.uid == nil {
+            presentLoginScreen()
+        } else {
+            
+        }
+        
+    }
+    
+    func logOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            
+        }
     }
     
     // MARK: - Helpers
@@ -36,11 +58,19 @@ class ConversationVC: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showProfile))
     }
     
+    func presentLoginScreen() {
+        DispatchQueue.main.async {
+            let controller = LoginController()
+            let nav = UINavigationController(rootViewController: controller)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        }
+    }
     
     // MARK - Selectors
     
     @objc func showProfile() {
-        
+        logOut()
     }
     
     func configureTableView() {
