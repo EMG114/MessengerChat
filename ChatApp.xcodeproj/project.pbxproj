@@ -21,6 +21,7 @@
 		073704AE246F30A400013063 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704AD246F30A400013063 /* CustomTextField.swift */; };
 		073704B0246F407800013063 /* plus_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 073704AF246F407800013063 /* plus_photo@2x.png */; };
 		073704B2246F6A9300013063 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704B1246F6A9300013063 /* LoginViewModel.swift */; };
+		073704B4246F7D0000013063 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704B3246F7D0000013063 /* RegistrationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		073704AD246F30A400013063 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		073704AF246F407800013063 /* plus_photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus_photo@2x.png"; sourceTree = "<group>"; };
 		073704B1246F6A9300013063 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		073704B3246F7D0000013063 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				073704B1246F6A9300013063 /* LoginViewModel.swift */,
+				073704B3246F7D0000013063 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0737048B246EE1E100013063 /* ViewController.swift in Sources */,
+				073704B4246F7D0000013063 /* RegistrationViewModel.swift in Sources */,
 				073704AC246F274600013063 /* InputContainerView.swift in Sources */,
 				07370487246EE1E100013063 /* AppDelegate.swift in Sources */,
 				07370489246EE1E100013063 /* SceneDelegate.swift in Sources */,
