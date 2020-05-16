@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1078279720691-p6d4s676ocjultbqepj6adnn84m1jqsh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1078279720691-p6d4s676ocjultbqepj6adnn84m1jqsh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAh_1F7NSipsk7kEysj57-HJbAbVSGy6DY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1078279720691</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.erica-gutierrez.ChatApp</string>
+	<key>PROJECT_ID</key>
+	<string>firechat-45215</string>
+	<key>STORAGE_BUCKET</key>
+	<string>firechat-45215.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1078279720691:ios:bb324a8476dac9e7ebb186</string>
+	<key>DATABASE_URL</key>
+	<string>https://firechat-45215.firebaseio.com</string>
+</dict>
+</plist>
