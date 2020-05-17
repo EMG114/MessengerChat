@@ -7,7 +7,8 @@
 //
 
 import UIKit
-//import JGProgressHUD
+import Foundation
+import JGProgressHUD
 
 extension UIView {
     func anchor(top: NSLayoutYAxisAnchor? = nil,
@@ -91,18 +92,30 @@ extension UIViewController {
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
     }
-//    
+    
+    func showLoader( _ show: Bool,  withText text: String? = "Loading") {
+        view.endEditing(true)
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = text
+        
+        if show {
+              hud.show(in: view)
+        } else {
+            hud.dismiss()
+        }
+    }
+    
 //    func showLoader(_ show: Bool, withText text: String? = "Loading") {
 //        view.endEditing(true)
 //        UIViewController.hud.textLabel.text = text
-//        
+//
 //        if show {
 //            UIViewController.hud.show(in: view)
 //        } else {
 //            UIViewController.hud.dismiss()
 //        }
 //    }
-//    
+    
 //    func configureNavigationBar(withTitle title: String, prefersLargeTitles: Bool) {
 //        let appearance = UINavigationBarAppearance()
 //        appearance.configureWithOpaqueBackground()
