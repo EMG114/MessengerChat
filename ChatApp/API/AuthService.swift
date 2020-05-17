@@ -24,9 +24,6 @@ struct AuthService {
     
     func logUserIn(withEmail email : String, password: String, completion: AuthDataResultCallback?) {
         Auth.auth().signIn(withEmail: email, password: password, completion: completion)
-        
-        
-        
     }
     
     func createUser(credentials: RegistrationCredentials, completion: ((Error?) -> Void)?) {
@@ -38,7 +35,7 @@ struct AuthService {
         
         ref.putData(imageData, metadata: nil) { (meta, error) in
             if let error = error {
-                print("\(error.localizedDescription)")
+                completion!(error)
                 return
             }
             
@@ -47,7 +44,7 @@ struct AuthService {
                 
                 Auth.auth().createUser(withEmail: credentials.email, password: credentials.password) { (result, error) in
                     if let error = error {
-                        print("\(error.localizedDescription)")
+                       completion!(error)
                     }
                     
                     
