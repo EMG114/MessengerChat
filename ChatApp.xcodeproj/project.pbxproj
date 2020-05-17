@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		073704B2246F6A9300013063 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704B1246F6A9300013063 /* LoginViewModel.swift */; };
 		073704B4246F7D0000013063 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073704B3246F7D0000013063 /* RegistrationViewModel.swift */; };
 		077668E52470501D00B01B89 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 077668E42470501D00B01B89 /* GoogleService-Info.plist */; };
+		07C79EBC2471C80B00BE3FE6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C79EBB2471C80B00BE3FE6 /* AuthService.swift */; };
 		6533DA8E22A0DCB2F3CE2E88 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3AEAC8331ED8A1ACB6A759 /* Pods_ChatApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		073704B1246F6A9300013063 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		073704B3246F7D0000013063 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		077668E42470501D00B01B89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		07C79EBB2471C80B00BE3FE6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0E3AEAC8331ED8A1ACB6A759 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC5D3B2809230373F0E5EBC /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		EE4A80CA671E7EE399739A40 /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		0737049A246EE1FF00013063 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				07C79EBB2471C80B00BE3FE6 /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -174,7 +177,6 @@
 				CDC5D3B2809230373F0E5EBC /* Pods-ChatApp.debug.xcconfig */,
 				EE4A80CA671E7EE399739A40 /* Pods-ChatApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -298,6 +300,7 @@
 				0737048B246EE1E100013063 /* ViewController.swift in Sources */,
 				073704B4246F7D0000013063 /* RegistrationViewModel.swift in Sources */,
 				073704AC246F274600013063 /* InputContainerView.swift in Sources */,
+				07C79EBC2471C80B00BE3FE6 /* AuthService.swift in Sources */,
 				07370487246EE1E100013063 /* AppDelegate.swift in Sources */,
 				07370489246EE1E100013063 /* SceneDelegate.swift in Sources */,
 				073704A3246EE3B000013063 /* ConversationVC.swift in Sources */,

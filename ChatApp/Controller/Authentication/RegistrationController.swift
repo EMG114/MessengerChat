@@ -136,7 +136,7 @@ class RegistrationController: UIViewController {
                             print("\(error.localizedDescription)")
                             return
                         }
-                        print("Could not create user")
+                        self.dismiss(animated:true, completion: nil)
                     }
                     
                 }
