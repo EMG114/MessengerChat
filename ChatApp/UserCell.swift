@@ -23,6 +23,22 @@ class UserCell: UITableViewCell {
         return iv
     }()
     
+    
+    private let usernameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.text = "spiderman"
+        return label
+    }()
+    
+    private let fullnameLabel: UILabel = {
+         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .lightGray
+        label.text = "Parker"
+         return label
+     }()
+    
    // MARK: -Lifecycle
     
     
@@ -33,7 +49,13 @@ class UserCell: UITableViewCell {
         profileImageView.setDimensions(height: 56, width: 56)
         profileImageView.layer.cornerRadius = 56/2
         
+        let stack = UIStackView(arrangedSubviews: [usernameLabel, fullnameLabel])
+        stack.axis = .vertical
+        stack.spacing = 2
         
+        addSubview(stack)
+        stack.centerY(inView: profileImageView, leftAnchor: profileImageView.rightAnchor, paddingLeft: 12)
+    
     }
     
     required init?(coder: NSCoder) {

@@ -19,7 +19,7 @@ class NewMessageController: UITableViewController {
         super.viewDidLoad()
         configureUI()
     }
-    
+        
     
     // MARK: - Selectors
     
