@@ -14,6 +14,8 @@ class NewMessageController: UITableViewController {
     
     // MARK: - Properties
     
+    private var users = [User]()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,10 @@ class NewMessageController: UITableViewController {
     // MARK: - API
     
     func fetchUsers() {
-        Service.fetchUsers()
+        Service.fetchUsers { (users) in
+            self.users = users
+            self.tableView.reloadData()
+        }
         
     }
     
@@ -48,11 +53,12 @@ class NewMessageController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return users.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? UserCell else { return UITableViewCell() }
+        cell.user = users[indexPath.row]
         return cell
     }
     
