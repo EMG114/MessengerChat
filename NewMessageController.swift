@@ -10,11 +10,16 @@ import UIKit
 
 private let reuseIdentifier = "UserCell"
 
+protocol NewMessageControllerDelegate: class {
+    func controller(_ controller: NewMessageController, wantsToStartChatWithUser user: User )
+}
+
 class NewMessageController: UITableViewController {
     
     // MARK: - Properties
     
     private var users = [User]()
+    weak var delegate: NewMessageControllerDelegate?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -62,6 +67,13 @@ class NewMessageController: UITableViewController {
         return cell
     }
     
+}
+
+extension NewMessageController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.controller(self, wantsToStartChatWithUser: users[indexPath.row])
+    }
 }
 
 

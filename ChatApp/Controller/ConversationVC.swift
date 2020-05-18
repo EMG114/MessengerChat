@@ -92,6 +92,7 @@ class ConversationVC: UIViewController {
     
     @objc func showNewMessage() {
         let controller = NewMessageController()
+        controller.delegate = self
         let nav = UINavigationController(rootViewController: controller)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
@@ -117,6 +118,8 @@ extension ConversationVC: UITableViewDelegate {
     
 }
 
+// MARK: - UITableViewDataSource
+
 extension ConversationVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
@@ -126,6 +129,18 @@ extension ConversationVC: UITableViewDataSource {
  let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) 
         cell.textLabel?.text = "Test Cell"
         return cell
+    }
+    
+    
+}
+
+// MARK: - NewMessageControllerdelegate
+
+extension ConversationVC: NewMessageControllerDelegate {
+    func controller(_ controller: NewMessageController, wantsToStartChatWithUser user: User) {
+        controller.dismiss(animated: true, completion: nil)
+        let chat = ChatController(user: user)
+        navigationController?.pushViewController(chat, animated: true)
     }
     
     
