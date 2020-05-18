@@ -118,8 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				07C79EBD24721ACF00BE3FE6 /* NewMessageController.swift */,
-				073704A4246EFCC400013063 /* Authentication */,
 				073704A2246EE3B000013063 /* ConversationVC.swift */,
+				073704A4246EFCC400013063 /* Authentication */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
