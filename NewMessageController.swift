@@ -18,6 +18,7 @@ class NewMessageController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        fetchUsers()
     }
         
     
@@ -27,6 +28,13 @@ class NewMessageController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - API
+    
+    func fetchUsers() {
+        Service.fetchUsers()
+        
+    }
+    
     // MARK: - Helpers
     
     func configureUI() {
@@ -34,7 +42,7 @@ class NewMessageController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleDismissal))
         
         tableView.tableFooterView = UIView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(UserCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.rowHeight = 80
         
     }
@@ -45,7 +53,6 @@ class NewMessageController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? UserCell else { return UITableViewCell() }
-      //  cell.textLabel?.text = "Test Cell"
         return cell
     }
     
