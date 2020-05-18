@@ -25,6 +25,8 @@
 		077668E52470501D00B01B89 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 077668E42470501D00B01B89 /* GoogleService-Info.plist */; };
 		07817CFC2472DE5A00F55451 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07817CFB2472DE5A00F55451 /* ChatController.swift */; };
 		07817CFE2472FD7300F55451 /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07817CFD2472FD7300F55451 /* CustomInputAccessoryView.swift */; };
+		07817D002473238D00F55451 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07817CFF2473238D00F55451 /* MessageCell.swift */; };
+		07817D022473302200F55451 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07817D012473302200F55451 /* Message.swift */; };
 		07C79EBC2471C80B00BE3FE6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C79EBB2471C80B00BE3FE6 /* AuthService.swift */; };
 		07C79EBE24721ACF00BE3FE6 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C79EBD24721ACF00BE3FE6 /* NewMessageController.swift */; };
 		07C79EC0247220BE00BE3FE6 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C79EBF247220BE00BE3FE6 /* UserCell.swift */; };
@@ -54,6 +56,8 @@
 		077668E42470501D00B01B89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07817CFB2472DE5A00F55451 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		07817CFD2472FD7300F55451 /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomInputAccessoryView.swift; path = ChatApp/CustomInputAccessoryView.swift; sourceTree = SOURCE_ROOT; };
+		07817CFF2473238D00F55451 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		07817D012473302200F55451 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		07C79EBB2471C80B00BE3FE6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		07C79EBD24721ACF00BE3FE6 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = SOURCE_ROOT; };
 		07C79EBF247220BE00BE3FE6 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = ChatApp/UserCell.swift; sourceTree = SOURCE_ROOT; };
@@ -150,6 +154,7 @@
 			children = (
 				07817CFD2472FD7300F55451 /* CustomInputAccessoryView.swift */,
 				07C79EBF247220BE00BE3FE6 /* UserCell.swift */,
+				07817CFF2473238D00F55451 /* MessageCell.swift */,
 				073704AB246F274600013063 /* InputContainerView.swift */,
 				073704AD246F30A400013063 /* CustomTextField.swift */,
 			);
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				07C79EC124722F2800BE3FE6 /* User.swift */,
+				07817D012473302200F55451 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,12 +331,14 @@
 				073704A3246EE3B000013063 /* ConversationVC.swift in Sources */,
 				07C79EC224722F2800BE3FE6 /* User.swift in Sources */,
 				07C79EC424722FB800BE3FE6 /* Service.swift in Sources */,
+				07817D002473238D00F55451 /* MessageCell.swift in Sources */,
 				073704A8246EFE3100013063 /* RegistrationController.swift in Sources */,
 				073704A6246EFE1200013063 /* LoginController.swift in Sources */,
 				073704AA246F04EB00013063 /* Extensions.swift in Sources */,
 				073704B2246F6A9300013063 /* LoginViewModel.swift in Sources */,
 				07817CFC2472DE5A00F55451 /* ChatController.swift in Sources */,
 				073704AE246F30A400013063 /* CustomTextField.swift in Sources */,
+				07817D022473302200F55451 /* Message.swift in Sources */,
 				07C79EBE24721ACF00BE3FE6 /* NewMessageController.swift in Sources */,
 				07817CFE2472FD7300F55451 /* CustomInputAccessoryView.swift in Sources */,
 			);

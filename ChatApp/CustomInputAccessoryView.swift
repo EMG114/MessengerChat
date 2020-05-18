@@ -12,7 +12,7 @@ class CustomInputAccessoryView: UIView {
     
   // MARK: - Properties
     
-    private let messageInputTextView: UITextView = {
+    private lazy var messageInputTextView: UITextView = {
       let tv = UITextView()
         tv.font = UIFont.systemFont(ofSize: 16)
         tv.isScrollEnabled = false
@@ -59,6 +59,8 @@ class CustomInputAccessoryView: UIView {
         addSubview(placeholderLabel)
         placeholderLabel.anchor(left: messageInputTextView.leftAnchor, paddingLeft: 4)
         placeholderLabel.centerY(inView: messageInputTextView)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTextInputChange), name: UITextView.textDidChangeNotification, object: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -72,7 +74,12 @@ class CustomInputAccessoryView: UIView {
     // MARK: - Selectors
     
     @objc func handleSendMessage() {
+       
         
+    }
+    
+    @objc func handleTextInputChange() {
+         placeholderLabel.isHidden = !self.messageInputTextView.text.isEmpty
     }
     
 }
