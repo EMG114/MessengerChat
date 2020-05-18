@@ -28,12 +28,26 @@ class CustomInputAccessoryView: UIView {
         return  button
     }()
     
+    private let placeholderLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Enter Message"
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .lightGray
+        return label
+    }()
+    
    // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         autoresizingMask = .flexibleHeight
+        backgroundColor = .white
+        
+        layer.shadowOpacity = 0.25
+        layer.shadowRadius = 10
+        layer.shadowOffset = .init(width:0, height: -8)
+        layer.shadowColor = UIColor.lightGray.cgColor
         
         addSubview(sendButton)
         sendButton.anchor(top: topAnchor, right: rightAnchor, paddingTop: 4, paddingRight: 8)
@@ -41,6 +55,10 @@ class CustomInputAccessoryView: UIView {
         
         addSubview(messageInputTextView)
         messageInputTextView.anchor(top:topAnchor, left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: sendButton.leftAnchor, paddingTop: 12, paddingLeft:4 , paddingBottom: 8, paddingRight:8 )
+        
+        addSubview(placeholderLabel)
+        placeholderLabel.anchor(left: messageInputTextView.leftAnchor, paddingLeft: 4)
+        placeholderLabel.centerY(inView: messageInputTextView)
     }
     
     required init?(coder: NSCoder) {
