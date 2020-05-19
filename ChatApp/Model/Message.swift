@@ -6,12 +6,13 @@
 //  Copyright © 2020 Perseidas LLC. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 struct Message {
     
-    
+    let text: String
+    let isFromCurrentUser: Bool
     
     
 }
