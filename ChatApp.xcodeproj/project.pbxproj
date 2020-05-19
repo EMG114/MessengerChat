@@ -28,6 +28,7 @@
 		07817D002473238D00F55451 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07817CFF2473238D00F55451 /* MessageCell.swift */; };
 		07817D022473302200F55451 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07817D012473302200F55451 /* Message.swift */; };
 		078485BE247456F100E8090A /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078485BD247456F100E8090A /* MessageViewModel.swift */; };
+		078485C02474695C00E8090A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078485BF2474695C00E8090A /* Constants.swift */; };
 		07C79EBC2471C80B00BE3FE6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C79EBB2471C80B00BE3FE6 /* AuthService.swift */; };
 		07C79EBE24721ACF00BE3FE6 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C79EBD24721ACF00BE3FE6 /* NewMessageController.swift */; };
 		07C79EC0247220BE00BE3FE6 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C79EBF247220BE00BE3FE6 /* UserCell.swift */; };
@@ -60,6 +61,7 @@
 		07817CFF2473238D00F55451 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		07817D012473302200F55451 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		078485BD247456F100E8090A /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		078485BF2474695C00E8090A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		07C79EBB2471C80B00BE3FE6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		07C79EBD24721ACF00BE3FE6 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = SOURCE_ROOT; };
 		07C79EBF247220BE00BE3FE6 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = ChatApp/UserCell.swift; sourceTree = SOURCE_ROOT; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				073704A9246F04EB00013063 /* Extensions.swift */,
+				078485BF2474695C00E8090A /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0737048B246EE1E100013063 /* ViewController.swift in Sources */,
+				078485C02474695C00E8090A /* Constants.swift in Sources */,
 				073704B4246F7D0000013063 /* RegistrationViewModel.swift in Sources */,
 				073704AC246F274600013063 /* InputContainerView.swift in Sources */,
 				07C79EBC2471C80B00BE3FE6 /* AuthService.swift in Sources */,

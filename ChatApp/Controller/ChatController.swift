@@ -60,6 +60,15 @@ class ChatController: UICollectionViewController {
         collectionView.alwaysBounceVertical = true
     }
     
+    // MARK: - API
+    
+    func fetchMessages() {
+        Service.fetchMessages(forUser: user) { (messages) in
+            self.messages = messages
+            self.collectionView.reloadData()
+        }
+    }
+    
 }
 
 
@@ -92,10 +101,12 @@ extension ChatController: UICollectionViewDelegateFlowLayout {
 
 extension ChatController: CustomInputAccessoryViewDelegate {
     func inputView(_ inputView: CustomInputAccessoryView, wantsTOSend message: String) {
-        inputView.messageInputTextView.text = nil
-        fromCurrentUser.toggle()
-        let message = Message(text: message, isFromCurrentUser: fromCurrentUser)
-        messages.append(message)
-        collectionView.reloadData()
+  
+        Service.uploadMessage(message, to: user) { (error) in
+            if let error = error {
+                return
+            }
+               inputView.clearMessageText()
+        }
     }
 }
