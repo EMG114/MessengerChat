@@ -1,6 +1,6 @@
 osx_image: xcode11.4
 language: swift
 os: osx
-xcode_project: ChatApp.xcworkspace
+xcode_project: ChatApp.xcodeproj
 xcode_scheme: ChatApp
 xcode_destination: platform=iOS Simulator,OS=13,name=iPhone 11
